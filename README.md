@@ -47,8 +47,8 @@ Kaggle Setup:
 mkdir -p ~/.kaggle
 cp kaggle.json ~/.kaggle/
 chmod 600 ~/.kaggle/kaggle.json
-
-Dataset
+---
+## Dataset
 Source: Higgs Boson Machine Learning Challenge (Kaggle)
 
 Features: 30 engineered features (e.g., transverse momentum, invariant mass).
@@ -65,8 +65,8 @@ Preprocessing
 Missing values are marked as -999.0 and handled during training.
 
 Features are standardized, and labels are one-hot encoded.
-
-Methodology
+---
+## Methodology
 1. Synthetic Data Generation (cVampPrior β-VAE)
 - Architecture: Encoder-decoder with conditional labels.
 
@@ -78,8 +78,8 @@ Methodology
 - Physics Constraints: Penalizes deviations from known physics (e.g., invariant mass ≈ 125 GeV).
 
 - Architecture: Fully connected network with residual connections.
-
-Usage
+---
+## Usage
 1. Download Data:
 
 !kaggle competitions download -c higgs-boson
@@ -93,31 +93,33 @@ test_data = pd.read_csv('test.zip/test.csv')
 3. Train cVampPrior β-VAE and PINN:
 
 See the Jupyter notebook for model architectures and training loops.
+---
+## Results
+- The cVampPrior β-VAE generates high-fidelity synthetic data, improving model robustness.
 
-Results
-The cVampPrior β-VAE generates high-fidelity synthetic data, improving model robustness.
+- PINN achieves higher accuracy by enforcing physical consistency.
 
-PINN achieves higher accuracy by enforcing physical consistency.
+- Evaluation metrics (e.g., ROC-AUC, MSE score, F1-score) are used to quantify performance.
 
-Evaluation metrics (e.g., ROC-AUC, MSE score, F1-score) are used to quantify performance.
+---
+## References
+- The Higgs Boson: Discovery and Study (ATLAS)
 
-References
-The Higgs Boson: Discovery and Study (ATLAS)
+- VAE with VampPrior (arXiv)
 
-VAE with VampPrior (arXiv)
+- Higgs Boson Dataset (Kaggle)
 
-Higgs Boson Dataset (Kaggle)
-
-Contributing
+---
+## Contributing
 Contributions, feedback, and suggestions are welcome! Please feel free to open an issue or submit a pull request with any improvements.
 
-License
+## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Acknowledgements
+## Acknowledgements
 I extend my thanks to the research community and developers whose work on Physics-Informed Neural Networks and Variational Autoencoders inspired this project.
 
-Disclaimer
+## Disclaimer
 
 This project is a demonstration of how data science and machine learning techniques can be applied to physics research. It is not intended to be a complete or fully accurate representation of the Higgs boson identification process. Further development and collaboration with domain experts are encouraged.
 
