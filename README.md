@@ -47,6 +47,7 @@ Kaggle Setup:
 mkdir -p ~/.kaggle
 cp kaggle.json ~/.kaggle/
 chmod 600 ~/.kaggle/kaggle.json
+
 ---
 ## Dataset
 Source: Higgs Boson Machine Learning Challenge (Kaggle)
@@ -65,6 +66,7 @@ Preprocessing
 Missing values are marked as -999.0 and handled during training.
 
 Features are standardized, and labels are one-hot encoded.
+
 ---
 ## Methodology
 1. Synthetic Data Generation (cVampPrior β-VAE)
@@ -78,6 +80,7 @@ Features are standardized, and labels are one-hot encoded.
 - Physics Constraints: Penalizes deviations from known physics (e.g., invariant mass ≈ 125 GeV).
 
 - Architecture: Fully connected network with residual connections.
+
 ---
 ## Usage
 1. Download Data:
@@ -93,6 +96,7 @@ test_data = pd.read_csv('test.zip/test.csv')
 3. Train cVampPrior β-VAE and PINN:
 
 See the Jupyter notebook for model architectures and training loops.
+
 ---
 ## Results
 - The cVampPrior β-VAE generates high-fidelity synthetic data, improving model robustness.
